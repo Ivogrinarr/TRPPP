@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<intermediate_model xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" method="CONFIG">
+ <creation_time time="Nov 11, 2021 17:58"/>
+ <network_model>
+  <network name="Any" number="0.0.0.0" mask="0.0.0.0"/>
+  <asset assetname="11111-KSH s TSUSom" type="Firewall" ip_forwarding="true" os="ContinentOS 3.9">
+   <interface name="em0" type="Ethernet" ip_address="10.0.188.43" ip_mask="255.255.255.0" zone="External"/>
+   <interface name="em1" type="Ethernet" ip_address="10.0.189.43" ip_mask="255.255.255.0" zone="Internal"/>
+   <interface name="vlan0" type="Virtual" ip_address="1.1.0.14" ip_mask="255.255.255.0" zone="Internal"/>
+   <routing_rule destination="1.1.0.0/24" gateway="1.1.0.1"/>
+   <routing_rule destination="1.1.0.14/24" gateway="0.0.0.0"/>
+   <routing_rule destination="10.0.188.43/24" gateway="0.0.0.0"/>
+   <routing_rule destination="10.0.189.43/24" gateway="0.0.0.0"/>
+   <routing_rule destination="0.0.0.0/0" gateway="10.0.188.1"/>
+   <access_rule id="1" source_obj="Any" destination_obj="Any" action="Allow"/>
+   <address_object name="Any" ip_ranges="0.0.0.0/0"/>
+  </asset>
+ </network_model>
+</intermediate_model>
